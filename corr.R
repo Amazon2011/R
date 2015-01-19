@@ -8,7 +8,15 @@ corr <- function(directory, threshold = 0) {
   ## nitrate and sulfate; the default is 0
   
   ## Return a numeric vector of correlations
+  completedatanum <- complete(directory)
+  datafilenames <- paste(directory, "/", list.files(directory), sep = "")
+  satisfactorydatafilenames <- datafilenames[completedatanum[, 2] >= threshold & completedatanum[, 2] > 0]
   
+  corVector <- numeric(0)
+  for (file in satisfactorydatafilenames) {
+    completedata <- na.omit(read.csv(file, header = T))
+    corVector <- c(corVector, cor(completedata$sulfate, completedata$nitrate))
+  }
   
-  
+  corVector
 }
