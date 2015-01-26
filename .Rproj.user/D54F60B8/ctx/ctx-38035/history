@@ -1,111 +1,3 @@
-ls()
-z0
-x
-y
-w
-w <- Binomial()
-w <- Binomial(1)
-search()
-library(help = stats)
-w <- Binomial()
-w <- Binomial
-library(help = stats)
-w <- rnorm()
-w <- rnorm(1)
-w
-w <- rnorm(0)
-w
-w <- rnorm(0,1)
-w
-w
-w <- rnorm(10,0,1)
-w
-w <- Binomial(10)
-w <- Binomial(10,1)
-w <- Binomial(10,1,1)
-w <- rnorm(10,0,1)
-w
-library(help = datasets)
-data(AirPassengers)
-AirPassengers
-plot(AirPassengers)
-lm(AirPassengers)
-chooseCRANmirror()
-local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
-if(nchar(pkg)) library(pkg, character.only=TRUE)})
-local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
-if(nchar(pkg)) library(pkg, character.only=TRUE)})
-library(help = cluster)
-data(animals)
-animals
-library(help = cluster)
-library(help = cluster)
-q()
-update.packages()
-x
-y <- numeric(length(x))
-for (i in 1:length(x)) y[i] <- x[i]
-;
-y <- numeric(length(x))
-for (i in 1:length(x)) y[i] <- x[i];
-y
-y <- numeric(length(x))
-for (i in 1:length(x)) y[i] <- 0
-y
-y <- numeric(length(x))
-for (i in 1:length(x)) {
-y[i] <- 1
-}
-y
-?cbind
-cbind(x,y)
-X <- cbind(x,y)
-apply(X, 2, mean)
-apply(X, 2, sd)
-sample(1:52,4)
-sample(1:52,4)
-sample(1:52,4)
-sample(1:52,4)
-sample(1:52,4)
-sample(1:52,4)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,4,replace=TRUE)
-sample(1:52,55,replace=TRUE)
-sample(1:52,55)
-sample(c("H", "T"), 10, replace = TRUE)
-sample(1:6, 10, replace = TRUE)
-sample(1:6, 10, replace = TRUE)
-sample(1:6, 10, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
-sample(1:6, 3, replace = TRUE)
 sample(1:6, 3, replace = TRUE)
 sample(1:6, 3, replace = TRUE)
 sample(1:6, 3, replace = TRUE)
@@ -506,7 +398,115 @@ cacheMatrix$getinversematrix()
 source('D:/Study/ProgrammingAssignment2/cachematrix.R')
 cacheMatrix <- makeCacheMatrix(x)
 cacheSolve(cacheMatrix)
-ls()
-tapply(mtcars$mpg, mtcars$cyl, mean)
+x <- 1:4
+lapply(x, runif)
+lapply(x, runif, min = 0, max = 100)
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 2, 3))
+lapply(x, function(elt) elt[, 1])
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
+lapply(x, function(elt) elt[, 1])
+x <- matrix(rnorm(200), 20, 10)
+apply(x, 2, mean)
+apply(x, 1, mean)
+apply(x, 1, sum)
+rowmeans(x)
+rowMeans(x)
+a <- array(rnorm(2 * 2 * 10), c(2, 2, 10))
+a
+apply(x, c(1, 2), mean)
+apply(a, c(1, 2), mean)
+rowMeans(a, dims = 2)
+rowMeans(a, dims = 1)
+rowMeans(a, dims = 2)
+rowMeans(a, dims = 3)
+rowMeans(a, dims = 2)
+mapply(rnorm, 1:4)
+noise <- function(n, mean, sd) {
++ rnorm(n, mean, sd)
++ }
+noise <- function(n, mean, sd) {}
+noise <- function(n, mean, sd) {
+rnorm(n, mean, sd)
+}
+noise(2, 1, 2)
+noise(1:2, 1:2, 2)
+noise(1:2, 1, 2)
+noise(11:5, 1, 2)
+noise(11, 1, 2)
+noise(11:12, 1, 2)
+noise(1:5, 1:6, 2)
+noise(5, 1:5, 2)
+noise(1:5, 1:5, 2)
+mapply(noise, 1:5, 1:5, 2)
+noise(1:5, 1:5, 0:5)
+noise(1:5, 1:5, 0:5)
+noise(1:5, 1:5, 0:5)
+noise(1:5, 1:5, 0:5)
+noise(1:5, 2, 0:5)
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+f
+f <- gl(4, 10)
+f
+tapply(x, f, mean)
+f <- gl(3, 10)
+tapply(x, f, mean)
+f <- gl(2, 10)
+tapply(x, f, mean)
+f <- gl(3, 10)
+tapply(x, f, mean)
+lapply(x, mean)
+x
+tapply(x, f, mean)
+f
+f <- gl(3, 9)
+tapply(x, f, mean)
+f <- gl(3, 10)
+tapply(x, f, mean)
+tapply(x, f, range)
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 5)
+split(x, f)
+f
+x
+f <- gl(3)
+f <- gl(3, 1)
+f
+split(x, f)
+x <- rnorm(10)
+x
+f1 <- lg(2, 5)
+f1 <- gl(2, 5)
+f1
+f2 <- gl(5,2)
+f2
+list(f1, f2)
+split(x, list(f1, f2\))
+split(x, list(f1, f2))
+str(split(x, list(f1, f2)))
+librarry(datasets)
+library(datasets)
+data(iris)
+iris
+?iris
+s <- split(iris, iris$)Species
+s <- split(iris, iris$Species)
+sapply(s, function(x) colMeans([, "Sepal.Length"], na.rm = TRUE)
+sapply(s, function(x) colMeans([, "Sepal.Length"]), na.rm = TRUE)
+sapply(s, function(x) colMeans(x[, "Sepal.Length"]), na.rm = TRUE)
+sapply(s, function(x) colMeans(x[, "Sepal.Length"], na.rm = TRUE))
+s
+sapply(s, function(x) colMeans(x[, Sepal.Length], na.rm = TRUE))
+sapply(s, function(x) colMeans(x[, "Sepal.Length"], na.rm = TRUE))
+sapply(s, function(x) colMeans(x[, c("Sepal.Length", "Petal.Width")], na.rm = TRUE))
+library(datasets)
+data(mtcars)
+?mtcars
 mtcars
-tapply(mtcars$hp, mtcars$cyl, mean)
+tapply(mtcars$cyl, mtcars$mpg, mean)
+sapply(mtcars, cyl, mean)
+with(mtcars, tapply(mpg, cyl, mean))
+debug(ls)
+ls()
+q
+q()
