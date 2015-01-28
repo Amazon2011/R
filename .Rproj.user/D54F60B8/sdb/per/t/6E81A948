@@ -1,0 +1,17 @@
+{
+    "contents" : "best <- function(state, outcome) {\n  ## Read outcome data\n  outcomeofcaremeasures <- read.csv(\"rprog-data-ProgAssignment3-data/outcome-of-care-measures.csv\", colClasses = \"character\")\n  \n  ## Check that state and outcome are valid\n  \n  if (!(state %in% outcomeofcaremeasures$State)) {\n    stop(\"invalid state\")\n  }\n  if (!(outcome %in% names(outcomeofcaremeasures))) {\n    stop(\"invalid outcome\")\n  }\n  \n  \n  \n  ## Return hospital name in that state with lowest 30-day death\n  ## rate\n}",
+    "created" : 1422434221585.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3404727068",
+    "id" : "6E81A948",
+    "lastKnownWriteTime" : 1422438080,
+    "path" : "D:/Study/R/best.R",
+    "project_path" : "best.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
