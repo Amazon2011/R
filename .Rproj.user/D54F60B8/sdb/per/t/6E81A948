@@ -1,0 +1,17 @@
+{
+    "contents" : "best <- function(state, outcome) {\n  ## Read outcome data\n  outcomeofcaremeasures <- read.csv(\"rprog-data-ProgAssignment3-data/outcome-of-care-measures.csv\",\n                                    colClasses = \"character\", header = TRUE,check.names = FALSE)\n  \n  ## Check that state and outcome are valid\n  \n  if (length(grep(state, outcomeofcaremeasures$State, ignore.case = TRUE)) == 0 ) {\n    stop(\"invalid state\")\n  }\n  if (length(grep(paste(\"from\", outcome, sep=\" \"), colnames(outcomeofcaremeasures), ignore.case = TRUE)) == 0) {\n    stop(\"invalid outcome\")\n  }\n  \n  prefix <- \"Hospital 30-Day Death \\\\(Mortality\\\\) Rates from\"\n  colName <- paste(prefix, outcome, sep = \" \")\n  columnIndex <- grep(paste(\"^\", colName, \"$\", sep = \"\"), colnames(outcomeofcaremeasures), ignore.case = TRUE)\n  wantedData <- outcomeofcaremeasures[outcomeofcaremeasures[, \"State\"] == state & outcomeofcaremeasures[, columnIndex] != \"Not Available\", c(2, columnIndex)]\n  wantedData[, 2] <- sapply(wantedData[, 2], as.numeric)\n  \n  ## Return hospital name in that state with lowest 30-day death\n  ## rate\n  wantedData[order(wantedData[, 2], wantedData[, 1]),][1, 1]\n}",
+    "created" : 1422434221585.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3610619073",
+    "id" : "6E81A948",
+    "lastKnownWriteTime" : 1422587652,
+    "path" : "D:/Study/R/best.R",
+    "project_path" : "best.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

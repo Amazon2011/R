@@ -1,0 +1,16 @@
+{
+    "contents" : "complete <- function(directory, id = 1:332) {\n  ## 'directory' is a character vector of length 1 indicating\n  ## the location of the CSV files\n  \n  ## 'id' is an integer vector indicating the monitor ID numbers\n  ## to be used\n  \n  ## Return a data frame of the form:\n  ## id nobs\n  ## 1  117\n  ## 2  1041\n  ## ...\n  ## where 'id' is the monitor ID number and 'nobs' is the\n  ## number of complete cases\n  datafilenames <- paste(directory, \"/\", list.files(directory), sep = \"\")\n  \n  completedatanum <- data.frame()\n  for (i in id) {\n    newdata <- read.csv(datafilenames[i], header = T)\n    completedatanum <- rbind(completedatanum, c(i,sum(complete.cases(newdata))))\n  }\n  \n  colnames(completedatanum) <- c(\"id\", \"nobs\")\n  completedatanum\n}",
+    "created" : 1421640247232.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "855467571",
+    "id" : "3FA5B1A",
+    "lastKnownWriteTime" : 1421647167,
+    "path" : "D:/Study/R/complete.R",
+    "project_path" : "complete.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
