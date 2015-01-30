@@ -1,6 +1,7 @@
 best <- function(state, outcome) {
   ## Read outcome data
-  outcomeofcaremeasures <- read.csv("rprog-data-ProgAssignment3-data/outcome-of-care-measures.csv", colClasses = "character", header = TRUE, check.names = FALSE)
+  outcomeofcaremeasures <- read.csv("rprog-data-ProgAssignment3-data/outcome-of-care-measures.csv",
+                                    colClasses = "character", header = TRUE,check.names = FALSE)
   
   ## Check that state and outcome are valid
   
